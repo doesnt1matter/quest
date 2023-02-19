@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <script src="./index.js" defer></script>
+    <title>КВЕСТ</title>
+</head>
+
+<body>
+    <div class="loading">
+        <div class="loading__logo">
+            <img src="./img/logo.png" alt="LOGO">
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="main">
+            <div class="main__text">
+                <div class="main__title">Добро пожаловать в игру!</div>
+                <div class="main__description">Задание состоит в том, чтобы подобрать код и ввести его. Все просто!
+                    </br> Первую записку с заданием тебя ждет в столе, остальные тебе предстоит найти. Не жди что
+                    задания будут легкие! <span>ДА НАЧНЕТСЯ ИГРА!</span></div>
+            </div>
+
+            <div class="main__code">
+                <div class="main-code__title">CODE</div>
+                <div class="main-code__input">
+                    <input type="text" id="1" maxlength="8" class="input">
+                </div>
+                <button class="main-code__button">ПРОВЕРИТЬ КОД</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container__error">
+        <div class="title">Неверный код</div>
+        <div class="description">Попоробуй еще раз!</div>
+    </div>
+
+    <div class="container__success">
+        <div class="title">Правильно, блин...</div>
+        <div class="description">Разбери кровать</div>
+    </div>
+</body>
+
+</html>

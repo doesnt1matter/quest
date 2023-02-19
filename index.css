@@ -1,0 +1,177 @@
+/* fonts */
+@font-face {
+    font-family: "Montserrat";
+    src: url("./font/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: "Courier New";
+    src: url("./font/couriernew.ttf");
+}
+
+.wrap {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* body */
+body {
+    font-size: 16px;
+    font-family: "Montserrat";
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.431);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body._blur::after {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* loading */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    opacity: 1;
+    pointer-events: all;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+._disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+.loading__logo {
+    transition: 0.3s all ease-in-out;
+    animation: rotate infinite 1s;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* main */
+.main {
+
+}
+.main__text {
+    
+}
+.main__title {
+    font-size: 24px;
+    color: #52C5F6;
+}
+.main__description {
+    margin-top: 3%;
+}
+.main__description span {
+    color: #52C5F6;
+}
+.main__code {
+    max-width: 420px;
+    margin: 5% auto;
+}
+.main-code__title {
+    font-size: 64px;
+    font-family: "Courier New";
+    text-align: center;
+    margin-bottom: 15px;
+}
+.main-code__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    color: #52C5F6;
+}
+.main-code__input input {
+    width: 100%;
+    height: 35px;
+    outline: none;
+    transition: 0.3s all ease-in-out;
+    border: 1px solid #BCBCBC;
+    border-radius: 5px;
+    color: #52C5F6;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Courier New";
+    letter-spacing: 13px;
+}
+.main-code__button {
+    margin-top: 5%;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #52C5F6;
+    letter-spacing: 0.13em;
+    color: #FFFFFF;
+    font-family: "Courier New";
+    font-size: 20px;
+}
+
+.container__error, .container__success {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+    pointer-events: none;
+    padding: 20px 10px;
+    border-radius: 13px;
+}
+
+.container__error._active,
+.container__success._active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.container__error .title,
+.container__success .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.container__error .title {
+    color: red;
+}
+
+.container__success .title {
+    color: green;
+}
+
+.container__error .description,
+.container__success .description {
+    color: gray;
+    font-size: 13px;
+}
